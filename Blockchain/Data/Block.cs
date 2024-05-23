@@ -9,14 +9,17 @@ namespace Blockchain.Data
 {
     public class Block
     {
-        public int Index { get; }
-        public string PreviousHash { get; }
-        public string Hash { get; private set; }
-        public string Data { get; }
+        public int ClientId { get; set; }
+        public DateTime Timestamp { get; set; }
+        public string Data { get; set; }
+        public string PreviousHash { get; set; }
+        public string Hash { get; set; }
+        public int Num { get; set; }
 
-        public Block(int index, string data, string previousHash = "")
+        public Block(int clientId, DateTime timestamp, string data, string previousHash = "")
         {
-            Index = index;
+            ClientId = clientId;
+            Timestamp = timestamp;
             Data = data;
             PreviousHash = previousHash;
             Hash = CalculateHash();
@@ -26,15 +29,26 @@ namespace Blockchain.Data
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                string rawData = $"{Index}{PreviousHash}{Data}";
+                string rawData = ClientId + Timestamp.ToString() + Data + PreviousHash + Num;
                 byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(rawData));
                 StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
+                for (int i = 0; i < bytes.Length; i++)
                 {
-                    builder.Append(b.ToString("x2"));
+                    builder.Append(bytes[i].ToString("x2"));
                 }
                 return builder.ToString();
             }
+        }
+
+        public void MineBlock(int digits)
+        {
+            string target = new string('0', digits);
+            while (Hash.Substring(0, digits) != target)
+            {
+                Num++;
+                Hash = CalculateHash();
+            }
+            Console.WriteLine("Block mined: " + Hash);
         }
     }
 }
