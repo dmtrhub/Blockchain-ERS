@@ -8,18 +8,16 @@ namespace Blockchain
 {
     public class Client
     {
-        private SmartContract smartContract;
-        public string Id { get; }
+        public int Id { get; }
 
-        public Client(string id, SmartContract smartContract)
+        public Client(int id)
         {
             Id = id;
-            this.smartContract = smartContract;
         }
-
-        public void SendData(string data)
+        public void SendData(SmartContract smartContract, string data)
         {
             Console.WriteLine($"\nClient {Id} sending data...\n");
+            smartContract.ReceiveData(this, data);
         }
     }
 }
