@@ -43,14 +43,37 @@ namespace Ers
             Console.WriteLine($"Miner {miner.Id} registered.");
         }
 
-        public Block ReceiveData(Client client, string data)
+        public void ReceiveData(Client client, string data)
         {
             Console.WriteLine("Data received from client " + client.Id + ":\n\t" + data);
-            Block newBlock = new Block(client.Id, DateTime.Now, data);
+            Block newBlock = new Block(client.Id, DateTime.Now, data, Blockchain.Instance.GetLatestBlock().Hash);
             AssignTask(newBlock);
-            return newBlock;
         }
 
-        public void AssignTask(Block block) { }
+        public void AssignTask(Block block) 
+        {
+            Miner selectedMiner = ChooseMiner();
+            if (selectedMiner != null)
+            {
+                Console.WriteLine($"\nThe block is assigned to the {selectedMiner.Id}");
+                selectedMiner.MineBlock(block);
+            }
+            else
+            {
+                Console.WriteLine("No miners available to assign the task.");
+            }
+        }
+
+        private Miner ChooseMiner()
+        {
+            if (registeredMiners.Count == 0)
+            {
+                return null;
+            }
+
+            Random random = new Random();
+            int index = random.Next(0, registeredMiners.Count);
+            return registeredMiners[index];
+        }
     }
 }
