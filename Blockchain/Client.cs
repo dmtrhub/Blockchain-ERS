@@ -18,6 +18,7 @@ namespace Ers
         {
             Console.WriteLine($"\nClient {Id} sending data...\n");
             smartContract.ReceiveData(this, data);
+            Console.WriteLine("\n-------------------------------------------------------");
         }
     }
 }

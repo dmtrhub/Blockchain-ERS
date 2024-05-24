@@ -40,7 +40,7 @@ namespace Ers
             }
         }
 
-        public void MineBlock(int digits)
+        public string MineBlock(int digits)
         {
             string target = new string('0', digits);
             while (Hash.Substring(0, digits) != target)
@@ -48,7 +48,12 @@ namespace Ers
                 Num++;
                 Hash = CalculateHash();
             }
-            Console.WriteLine("Block mined: " + Hash);
+            return this.Hash;
+        }
+
+        public override string ToString()
+        {
+            return $"Block\n[\n\tClient id: {ClientId}\n\tTime: {Timestamp}\n\tData: {Data}\n\tPrevious Hash: {PreviousHash}\n\tHash: {Hash}\n]\n";
         }
     }
 }

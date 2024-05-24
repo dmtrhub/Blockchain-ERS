@@ -31,7 +31,7 @@ namespace Ers
             }
         }
 
-        public void RegistedClient(Client client)
+        public void RegisterClient(Client client)
         {
             registeredClients.Add(client);
             Console.WriteLine($"Client {client.Id} registered.");

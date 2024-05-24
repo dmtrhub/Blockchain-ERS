@@ -25,8 +25,8 @@ namespace Ers
         }
 
         public void MineBlock(Block block)
-        {
-            block.MineBlock(Blockchain.Instance.Digits);
+        {         
+            Console.WriteLine($"\nBlock mined by {Id}: " + block.MineBlock(Blockchain.Instance.Digits) + '\n');
             Notify(block);
         }
 
@@ -45,6 +45,10 @@ namespace Ers
             Blockchain.Instance.AddBlock(block);
             LocalBlockchain.Add(block);
             BitcoinBalance += 1;
+        }
+        public override string ToString()
+        {
+            return $"Miner id: {Id}, Bitcoin Balance: {BitcoinBalance}$, Local Blockchain Length: {LocalBlockchain.Count}";
         }
     }
 }

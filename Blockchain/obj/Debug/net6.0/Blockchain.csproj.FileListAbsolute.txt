@@ -1,0 +1,15 @@
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\bin\Debug\net6.0\Blockchain.exe
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\bin\Debug\net6.0\Blockchain.deps.json
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\bin\Debug\net6.0\Blockchain.runtimeconfig.json
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\bin\Debug\net6.0\Blockchain.dll
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\bin\Debug\net6.0\Blockchain.pdb
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.csproj.AssemblyReference.cache
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.AssemblyInfoInputs.cache
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.AssemblyInfo.cs
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.csproj.CoreCompileInputs.cache
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.dll
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\refint\Blockchain.dll
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.pdb
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\Blockchain.genruntimeconfig.cache
+G:\Fakultet\Projekat\Blockchain-ERS\Blockchain\obj\Debug\net6.0\ref\Blockchain.dll
