@@ -27,6 +27,24 @@ namespace Ers
         public void MineBlock(Block block)
         {
             block.MineBlock(Blockchain.Instance.Digits);
+            Notify(block);
+        }
+
+        private void Notify(Block block)
+        {
+            SmartContract.Instance.NotifyMiners(this, block);
+        }
+
+        public bool ValidateBlock(Block block)
+        {
+            return block.Hash.StartsWith(new string('0', Blockchain.Instance.Digits));
+        }
+
+        public void ConfirmBlock(Block block)
+        {
+            Blockchain.Instance.AddBlock(block);
+            LocalBlockchain.Add(block);
+            BitcoinBalance += 1;
         }
     }
 }

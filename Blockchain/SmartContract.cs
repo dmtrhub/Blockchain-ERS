@@ -75,5 +75,21 @@ namespace Ers
             int index = random.Next(0, registeredMiners.Count);
             return registeredMiners[index];
         }
+
+        public void NotifyMiners(Miner thisMiner, Block block)
+        {
+            foreach (var miner in registeredMiners)
+            {
+                if (miner.Id != thisMiner.Id && !miner.ValidateBlock(block))
+                {
+                    Console.WriteLine($"Miner {miner.Id} validation failed.");
+                    return;
+                }
+            }
+
+            thisMiner.ConfirmBlock(block);
+
+            Console.WriteLine($"The block is added to the main blockchain and the local chain of {thisMiner.Id} that validated this block of data.");
+        }
     }
 }
