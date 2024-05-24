@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blockchain.Data
+namespace Ers
 {
-    public class Blockchain
+    public class Blockchain 
     {
-        private Blockchain instance = null;
-        private readonly object lockObject = new object();
+        private static Blockchain instance = null;
+        private static readonly object lockObject = new object();
 
-        public IList<Block> Chain { get; }
+        public List<Block> Chain { get; }
         public int Digits { get; set; } = 3;
+
 
         private Blockchain()
         {
             Chain = new List<Block> { CreateGenesisBlock() };
         }
 
-        public Blockchain Instance
+        public static Blockchain Instance
         {
             get
             {
@@ -46,7 +47,6 @@ namespace Blockchain.Data
 
         public void AddBlock(Block newBlock)
         {
-            newBlock.PreviousHash = GetLatestBlock().Hash;
             Chain.Add(newBlock);
         }
     }

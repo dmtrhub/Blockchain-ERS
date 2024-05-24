@@ -1,11 +1,10 @@
-﻿using Blockchain.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blockchain
+namespace Ers
 {
     public class SmartContract
     {
@@ -36,6 +35,12 @@ namespace Blockchain
         {
             registeredClients.Add(client);
             Console.WriteLine($"Client {client.Id} registered.");
+        }
+
+        public void RegisterMiner(Miner miner)
+        {
+            registeredMiners.Add(miner);
+            Console.WriteLine($"Miner {miner.Id} registered.");
         }
 
         public Block ReceiveData(Client client, string data)
