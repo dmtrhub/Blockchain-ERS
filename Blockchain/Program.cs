@@ -1,12 +1,12 @@
 ﻿using Ers;
 
-SmartContract smartContract = SmartContract.Instance;
-Blockchain blockchain = Blockchain.Instance;
+ISmartContract smartContract = SmartContract.Instance;
+IBlockchain blockchain = Blockchain.Instance;
 
-Miner miner1 = new Miner("Miner 1");
-Miner miner2 = new Miner("Miner 2");
-Miner miner3 = new Miner("Miner 3");
-Miner miner4 = new Miner("Miner 4");
+IMiner miner1 = new Miner("Miner 1");
+IMiner miner2 = new Miner("Miner 2");
+IMiner miner3 = new Miner("Miner 3");
+IMiner miner4 = new Miner("Miner 4");
 
 Console.WriteLine("[ REGISTRATION OF MINERS ]\n");
 miner1.RegisterWithSmartContract(smartContract);
@@ -14,9 +14,9 @@ miner2.RegisterWithSmartContract(smartContract);
 miner3.RegisterWithSmartContract(smartContract);
 miner4.RegisterWithSmartContract(smartContract);
 
-Client client1 = new Client(123);
-Client client2 = new Client(357);
-Client client3 = new Client(192);
+IClient client1 = new Client(123);
+IClient client2 = new Client(357);
+IClient client3 = new Client(192);
 
 Console.WriteLine("\n\n[ REGISTRATION OF CLIENTS ]\n");
 smartContract.RegisterClient(client1);

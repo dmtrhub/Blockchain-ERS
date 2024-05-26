@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ers
 {
-    public class Client
+    public class Client : IClient
     {
         public int Id { get; }
 
@@ -14,7 +14,7 @@ namespace Ers
         {
             Id = id;
         }
-        public void SendData(SmartContract smartContract, string data)
+        public void SendData(ISmartContract smartContract, string data)
         {
             Console.WriteLine($"\nClient {Id} sending data...\n");
             smartContract.ReceiveData(this, data);

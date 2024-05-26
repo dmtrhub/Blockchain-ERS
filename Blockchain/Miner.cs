@@ -6,41 +6,41 @@ using System.Threading.Tasks;
 
 namespace Ers
 {
-    public class Miner 
+    public class Miner : IMiner
     {
         public string Id { get; private set; }
         public double BitcoinBalance { get; private set; } = 0;
-        public List<Block> LocalBlockchain { get; set; }
+        public List<IBlock> LocalBlockchain { get; set; }
 
         public Miner(string id)
         {
             Id = id;
-            LocalBlockchain = new List<Block>(Blockchain.Instance.Chain);
+            LocalBlockchain = new List<IBlock>(Blockchain.Instance.Chain);
         }
 
-        public List<Miner> RegisterWithSmartContract(SmartContract smartContract)
+        public List<IMiner> RegisterWithSmartContract(ISmartContract smartContract)
         {
             smartContract.RegisterMiner(this);
             return smartContract.registeredMiners;
         }
 
-        public void MineBlock(Block block)
-        {         
+        public void MineBlock(IBlock block)
+        {
             Console.WriteLine($"\nBlock mined by {Id}: " + block.MineBlock(Blockchain.Instance.Digits) + '\n');
             Notify(block);
         }
 
-        private void Notify(Block block)
+        private void Notify(IBlock block)
         {
             SmartContract.Instance.NotifyMiners(this, block);
         }
 
-        public bool ValidateBlock(Block block)
+        public bool ValidateBlock(IBlock block)
         {
             return block.Hash.StartsWith(new string('0', Blockchain.Instance.Digits));
         }
 
-        public void ConfirmBlock(Block block)
+        public void ConfirmBlock(IBlock block)
         {
             Blockchain.Instance.AddBlock(block);
             LocalBlockchain.Add(block);

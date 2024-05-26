@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ers
 {
-    public class Block
+    public class Block : IBlock
     {
         public int ClientId { get; set; }
         public DateTime Timestamp { get; set; }

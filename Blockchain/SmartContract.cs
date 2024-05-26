@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ers
 {
-    public class SmartContract
+    public class SmartContract : ISmartContract
     {
         private static SmartContract instance = null;
         private static readonly object lockObject = new object();
 
-        public List<Client> registeredClients { get; } = new List<Client>();
-        public List<Miner> registeredMiners { get; } = new List<Miner>();
+        public List<IClient> registeredClients { get; } = new List<IClient>();
+        public List<IMiner> registeredMiners { get; } = new List<IMiner>();
 
         private SmartContract() { }
 
@@ -31,28 +31,28 @@ namespace Ers
             }
         }
 
-        public void RegisterClient(Client client)
+        public void RegisterClient(IClient client)
         {
             registeredClients.Add(client);
             Console.WriteLine($"Client {client.Id} registered.");
         }
 
-        public void RegisterMiner(Miner miner)
+        public void RegisterMiner(IMiner miner)
         {
             registeredMiners.Add(miner);
             Console.WriteLine($"Miner {miner.Id} registered.");
         }
 
-        public void ReceiveData(Client client, string data)
+        public void ReceiveData(IClient client, string data)
         {
             Console.WriteLine("Data received from client " + client.Id + ":\n\t" + data);
-            Block newBlock = new Block(client.Id, DateTime.Now, data, Blockchain.Instance.GetLatestBlock().Hash);
+            IBlock newBlock = new Block(client.Id, DateTime.Now, data, Blockchain.Instance.GetLatestBlock().Hash);
             AssignTask(newBlock);
         }
 
-        public void AssignTask(Block block) 
+        public void AssignTask(IBlock block)
         {
-            Miner selectedMiner = ChooseMiner();
+            IMiner selectedMiner = ChooseMiner();
             if (selectedMiner != null)
             {
                 Console.WriteLine($"\nThe block is assigned to the {selectedMiner.Id}");
@@ -64,7 +64,7 @@ namespace Ers
             }
         }
 
-        private Miner ChooseMiner()
+        private IMiner ChooseMiner()
         {
             if (registeredMiners.Count == 0)
             {
@@ -76,7 +76,7 @@ namespace Ers
             return registeredMiners[index];
         }
 
-        public void NotifyMiners(Miner thisMiner, Block block)
+        public void NotifyMiners(IMiner thisMiner, IBlock block)
         {
             foreach (var miner in registeredMiners)
             {

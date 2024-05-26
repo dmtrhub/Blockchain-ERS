@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ers
 {
-    public class Blockchain 
+    public class Blockchain : IBlockchain
     {
         private static Blockchain instance = null;
         private static readonly object lockObject = new object();
 
-        public List<Block> Chain { get; }
+        public List<IBlock> Chain { get; }
         public int Digits { get; set; } = 3;
 
 
         private Blockchain()
         {
-            Chain = new List<Block> { CreateGenesisBlock() };
+            Chain = new List<IBlock> { CreateGenesisBlock() };
         }
 
         public static Blockchain Instance
@@ -35,17 +35,17 @@ namespace Ers
             }
         }
 
-        private Block CreateGenesisBlock()
+        private IBlock CreateGenesisBlock()
         {
             return new Block(0, DateTime.Now, "Genesis Block", "0");
         }
 
-        public Block GetLatestBlock()
+        public IBlock GetLatestBlock()
         {
             return Chain[Chain.Count - 1];
         }
 
-        public void AddBlock(Block newBlock)
+        public void AddBlock(IBlock newBlock)
         {
             Chain.Add(newBlock);
         }
