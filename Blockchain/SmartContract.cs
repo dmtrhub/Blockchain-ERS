@@ -78,18 +78,26 @@ namespace Ers
 
         public void NotifyMiners(IMiner thisMiner, IBlock block)
         {
+            bool valid = true;
+
             foreach (var miner in registeredMiners)
             {
-                if (miner.Id != thisMiner.Id && !miner.ValidateBlock(block))
+                if (miner.Id != thisMiner.Id) 
                 {
-                    Console.WriteLine($"Miner {miner.Id} validation failed.");
-                    return;
+                    if (!miner.ValidateBlock(block))
+                    {
+                        Console.WriteLine($"Miner {miner.Id} validation failed.");
+                        valid = false;
+                        return;
+                    }
                 }
             }
 
-            thisMiner.ConfirmBlock(block);
-
-            Console.WriteLine($"The block is added to the main blockchain and the local chain of {thisMiner.Id} that validated this block of data.");
+            if(valid)
+            {
+                thisMiner.ConfirmBlock(block);
+                Console.WriteLine($"The block is added to the main blockchain and the local chain of {thisMiner.Id} that validated this block of data.");
+            }            
         }
     }
 }
