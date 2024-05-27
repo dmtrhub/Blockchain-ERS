@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Blockchain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3065363d2d23d2ae8b49d18863a3670c0278dfb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Blockchain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Blockchain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

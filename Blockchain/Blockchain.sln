@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockchain", "Blockchain.csproj", "{165B6359-E9D5-48E3-9095-88F685020A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{2D63EBC3-5DE6-4492-9194-CBDFD77D8998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "..\Test\Test.csproj", "{2D63EBC3-5DE6-4492-9194-CBDFD77D8998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

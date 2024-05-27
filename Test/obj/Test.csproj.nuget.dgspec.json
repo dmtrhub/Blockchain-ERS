@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Test\\Test.csproj": {}
+    "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Test\\Test.csproj": {}
   },
   "projects": {
-    "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\Blockchain.csproj": {
+    "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\Blockchain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\Blockchain.csproj",
+        "projectUniqueName": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\Blockchain.csproj",
         "projectName": "Blockchain",
-        "projectPath": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\Blockchain.csproj",
-        "packagesPath": "C:\\Users\\Dimitrije\\.nuget\\packages\\",
-        "outputPath": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\obj\\",
+        "projectPath": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\Blockchain.csproj",
+        "packagesPath": "C:\\Users\\marija.ninkovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dimitrije\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marija.ninkovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,11 +35,26 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,25 +71,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Test\\Test.csproj": {
+    "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\Dimitrije\\.nuget\\packages\\",
-        "outputPath": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Test\\obj\\",
+        "projectPath": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\marija.ninkovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dimitrije\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\marija.ninkovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,14 +93,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\Blockchain.csproj": {
-                "projectPath": "G:\\Fakultet\\Projekat\\Blockchain-ERS\\Blockchain\\Blockchain.csproj"
+              "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\Blockchain.csproj": {
+                "projectPath": "C:\\Users\\marija.ninkovic\\Desktop\\Projekat\\Blockchain\\Blockchain.csproj"
               }
             }
           }
@@ -101,6 +110,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -148,7 +162,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
